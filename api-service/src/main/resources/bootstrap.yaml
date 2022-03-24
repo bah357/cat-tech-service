@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: kn-api-service
+  cloud:
+    kubernetes:
+      enabled: false
+  endpoint:
+    restart:
+      enabled: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+  config:
+    activate:
+      on-profile: local
+  security:
+    user:
+      password: password
+      name: username
+  data:
+    mongodb:
+      database: demodb
+      uri: mongodb://cosmos-kn-dev:cEHTAiHuY6ASjx8HrWCc898rhYbwPFBfXyJuZ58rCnPjTGEFj05sW8UDBRjVVkR1xeJw91Um7YwZHZwL6R2rVA==@cosmos-kn-dev.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmos-kn-dev@
+  kafka:
+    properties:
+      bootstrap:
+        servers: pkc-4j8dq.southeastasia.azure.confluent.cloud:9092
+      sasl:
+        mechanism: PLAIN
+        jaas:
+          config: org.apache.kafka.common.security.plain.PlainLoginModule   required username='DGYLX5MXKEZBWQNQ'   password='JCSC4NMCSxIol4J4hMvpvh6UbM+8NC9N6VIJxsVujnFyaxeKO+HrBoJEwIoXjPda';
+      security:
+        protocal: SASL_SSL
+      session:
+        timeout:
+          ms: 45000
+    producer:
+      topic: order-info-dev
+    consumer:
+      topic: purchase-order-dev
+server:
+  max-http-header-size: 20KB
+  port: 8080
+#logging:
+#  level: debug
+info:
+  app:
+    java:
+      version: ${java.version}
+
+#Required connection configs for Confluent Cloud Schema Registry
+#spring.kafka.properties.basic.auth.credentials.source=USER_INFO
+#spring.kafka.properties.basic.auth.user.info={{ SR_API_KEY }}:{{ SR_API_SECRET }}
+#spring.kafka.properties.schema.registry.url=https://{{ SR_ENDPOINT }}
