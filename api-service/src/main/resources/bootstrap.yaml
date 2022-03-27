@@ -1,6 +1,6 @@
 spring:
   application:
-    name: kn-api-service
+    name: cat-tech-service
   cloud:
     kubernetes:
       enabled: false
@@ -18,8 +18,8 @@ spring:
       name: username
   data:
     mongodb:
-      database: demodb
-      uri: mongodb://cosmos-kn-dev:cEHTAiHuY6ASjx8HrWCc898rhYbwPFBfXyJuZ58rCnPjTGEFj05sW8UDBRjVVkR1xeJw91Um7YwZHZwL6R2rVA==@cosmos-kn-dev.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmos-kn-dev@
+      database: hmsdb
+      uri: mongodb+srv://bah357BossUser:5NPY1ohZEAVAkGQT@cattechmongodb.5liak.mongodb.net/test
   kafka:
     properties:
       bootstrap:
