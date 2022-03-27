@@ -1,3 +1,12 @@
+buildscript {
+	ext {
+		set('springCloudVersion', "2021.0.1")
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin")
+	}
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.6.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -16,10 +25,6 @@ configurations {
 
 repositories {
 	mavenCentral()
-}
-
-ext {
-	set('springCloudVersion', "2021.0.1")
 }
 
 def activeProfile = project.hasProperty('profile') ? project.hasProperty('profile') : 'local'
