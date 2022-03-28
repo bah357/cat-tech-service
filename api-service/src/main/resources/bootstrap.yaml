@@ -11,7 +11,7 @@ spring:
     throw-exception-if-no-handler-found: true
   config:
     activate:
-      on-profile: local
+      on-profile: dev
   security:
     user:
       password: password
