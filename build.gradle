@@ -1,12 +1,18 @@
 plugins {
     id 'java'
+    id 'idea'
+    id 'java-library'
 }
+allprojects {
+    group = 'com.cat.tech'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
 
-group = 'com.cat.tech'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
-targetCompatibility = '17'
-
+    repositories {
+        mavenCentral()
+    }
+}
 repositories {
     mavenCentral()
 }
@@ -19,3 +25,6 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean

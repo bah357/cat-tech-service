@@ -1,9 +1,6 @@
 buildscript {
-	ext {
-		set('springCloudVersion', "2021.0.1")
-	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin")
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.6.4")
 	}
 }
 
@@ -13,9 +10,9 @@ plugins {
 	id 'java'
 }
 
-group = 'com.kn'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+//group = 'com.cat.tech'
+//version = '0.0.1-SNAPSHOT'
+//sourceCompatibility = '17'
 
 configurations {
 	compileOnly {
@@ -56,7 +53,7 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		mavenBom 'org.springframework.cloud:spring-cloud-dependencies:2021.0.1'
 	}
 }
 
