@@ -22,6 +22,4 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
       - name: Build with Gradle
-        run: ./gradlew build
-      - name: Deploy
-        run: ./gradlew bootRun
+        run: ./gradlew clean build
