@@ -19,15 +19,15 @@ spring:
   data:
     mongodb:
       database: hmsdb
-      uri: mongodb+srv://bah357BossUser:5NPY1ohZEAVAkGQT@cattechmongodb.5liak.mongodb.net/test
+      uri: ${mongodb.connection.string}
   kafka:
     properties:
       bootstrap:
-        servers: pkc-4j8dq.southeastasia.azure.confluent.cloud:9092
+        servers: ${kafka.server)
       sasl:
         mechanism: PLAIN
         jaas:
-          config: org.apache.kafka.common.security.plain.PlainLoginModule   required username='DGYLX5MXKEZBWQNQ'   password='JCSC4NMCSxIol4J4hMvpvh6UbM+8NC9N6VIJxsVujnFyaxeKO+HrBoJEwIoXjPda';
+          config: org.apache.kafka.common.security.plain.PlainLoginModule   required username='${kafka.username}'   password='${kafka.password}';
       security:
         protocal: SASL_SSL
       session:
@@ -37,17 +37,7 @@ spring:
       topic: order-info-dev
     consumer:
       topic: purchase-order-dev
-#server:
-#  max-http-header-size: 20KB
-#  port: 8080
-#logging:
-#  level: debug
 info:
   app:
     java:
       version: ${java.version}
-
-#Required connection configs for Confluent Cloud Schema Registry
-#spring.kafka.properties.basic.auth.credentials.source=USER_INFO
-#spring.kafka.properties.basic.auth.user.info={{ SR_API_KEY }}:{{ SR_API_SECRET }}
-#spring.kafka.properties.schema.registry.url=https://{{ SR_ENDPOINT }}
