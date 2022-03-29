@@ -14,8 +14,8 @@ spring:
       on-profile: dev
   security:
     user:
-      password: password
-      name: username
+      password: ${password}
+      name: ${username}
   data:
     mongodb:
       database: hmsdb
