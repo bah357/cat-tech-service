@@ -76,7 +76,7 @@ bootRun {
     }
 }
 
-task stage(dependsOn: ['build', 'clean'])
+/*task stage(dependsOn: ['build', 'clean'])
 build.mustRunAfter clean
 
 gradle.taskGraph.whenReady {
@@ -84,7 +84,7 @@ gradle.taskGraph.whenReady {
         if (taskGraph.hasTask(stage)) {
             test.enabled = false
         }
-}
+}*/
 
 //bootRun.dependsOn(dependsOn: ['build', 'clean'])
 //build.mustRunAfter clean
