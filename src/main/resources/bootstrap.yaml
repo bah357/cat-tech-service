@@ -1,3 +1,4 @@
+environment: dev
 spring:
   application:
     name: cat-tech-service
@@ -37,9 +38,9 @@ spring:
       topic: order-info-dev
     consumer:
       topic: purchase-order-dev
-server:
-  max-http-header-size: 20KB
-  port: 8080
+#server:
+#  max-http-header-size: 20KB
+#  port: 8080
 #logging:
 #  level: debug
 info:
