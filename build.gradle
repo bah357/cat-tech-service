@@ -24,11 +24,11 @@ repositories {
     mavenCentral()
 }
 
-/*configurations {
+configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
-}*/
+}
 
 dependencyManagement {
     imports {
@@ -78,13 +78,6 @@ bootRun {
 
 task stage(dependsOn: ['build', 'clean'])
 build.mustRunAfter clean
-
-task copyToLib(type: Copy) {
-    into "$buildDir/libs"
-    from(configurations.compile)
-}
-
-stage.dependsOn(copyToLib)
 
 gradle.taskGraph.whenReady {
     taskGraph ->
