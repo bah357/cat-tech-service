@@ -1,18 +1,18 @@
 steps:
-  - name: gcr.io/cloud-builders/gradle:7.4.2-jdk17
+  - name: gradle:7.4.2-jdk17
     entrypoint: gradle
     args: ['--version']
 
-  - name: gcr.io/cloud-builders/gradle:7.4.2-jdk17
+  - name: gradle:7.4.2-jdk17
     entrypoint: gradle
     args: ['test']
 
-  - name: gcr.io/cloud-builders/gradle:7.4.2-jdk17
+  - name: gradle:7.4.2-jdk17
     entrypoint: gradle
     args: ['assemble']
 
-  - name: gcr.io/cloud-builders/gradle:7.4.2-jdk17
-    args: ['build', '-t', 'gcr.io/ferrous-beaker-346008/image-name', '--build-arg=JAR_FILE=build/libs', '.']
-images: ['gcr.io/ferrous-beaker-346008/image-name']
+#  - name: gcr.io/cloud-builders/gradle:7.4.2-jdk17
+#    args: ['build', '-t', 'gcr.io/ferrous-beaker-346008/image-name', '--build-arg=JAR_FILE=build/libs', '.']
+#images: ['gcr.io/ferrous-beaker-346008/image-name']
 
 
